@@ -4,7 +4,7 @@
 * Create completed method for removing completed items from localStoage
 * If changed to not completed a completed item will be re-added to localStorage
 * Changed item id to be the length of the todo array and increase by 1 for each new item added
-## 12/01/2020
+## 12/01/2020 - Finished time limt of 3 hours
 * Time remaining: 7min 44 seconds
 * Added localStoragec to store tasks
 * Tasks get fetched fron localStorage
