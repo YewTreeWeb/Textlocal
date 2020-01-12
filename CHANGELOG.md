@@ -1,4 +1,8 @@
 ## 12/01/2020
+* Time remaining: 7min 44 seconds
+* Added localStoragec to store tasks
+* Tasks get fetched fron localStorage
+## 12/01/2020
 * Time remaining: 1hr 20min
 * Add new item
 * Remove item

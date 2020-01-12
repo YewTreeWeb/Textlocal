@@ -7,3 +7,7 @@ This will be fairly simple and there are lots of examples online, including a Vu
 ## References used
 * https://jsfiddle.net/yyx990803/4dr2fLb7/?utm_source=website&utm_medium=embed&utm_campaign=4dr2fLb7
 * https://www.youtube.com/watch?v=A5S23KS_-bU&t=730s
+
+### Want to do
+* Remove item from localStorgae on complete
+* Connect list to firebase

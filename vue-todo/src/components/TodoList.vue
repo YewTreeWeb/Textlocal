@@ -25,21 +25,18 @@
 </template>
 
 <script>
+// localStorage persistence
+
+const key = 'todos';
+
 export default {
   name: 'TodoList',
   data() {
     return {
       newTodo: '',
-      idForTodo: 3,
       beforeEditCache: '',
-      todos: [
-        {
-          id: 1, title: 'Task 1', completed: false, editing: false,
-        },
-        {
-          id: 2, title: 'Task 2', completed: false, editing: false,
-        },
-      ],
+      idForTodo: 1,
+      todos: [],
     };
   },
   directives: {
@@ -49,6 +46,16 @@ export default {
         el.focus();
       },
     },
+  },
+  mounted() {
+    if (localStorage.getItem(key)) {
+      try {
+        this.todos = JSON.parse(localStorage.getItem(key));
+      } catch (e) {
+        localStorage.removeItem(key);
+        console.error(e);
+      }
+    }
   },
   methods: {
     addTodo() {
@@ -64,9 +71,11 @@ export default {
 
       this.newTodo = '';
       this.idForTodo++;
+      this.saveTodo();
     },
     removeTodo(index) {
       this.todos.splice(index, 1);
+      this.saveTodo();
     },
     editTodo(todo) {
       this.beforeEditCache = todo.title;
@@ -81,6 +90,10 @@ export default {
     cancelEdit(todo) {
       todo.editing = false;
       todo.title = this.beforeEditCache;
+    },
+    saveTodo() {
+      const parsed = JSON.stringify(this.todos);
+      localStorage.setItem('todos', parsed);
     },
   },
 };
