@@ -1,7 +1,6 @@
 <template>
   <main id="app">
-    <img alt="Vue logo" src="./assets/logo.png" class="logo">
-    <TodoHeader/>
+    <TodoHeader msg="Vue Todo List!"/>
     <TodoList/>
   </main>
 </template>
@@ -27,7 +26,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 </style>
