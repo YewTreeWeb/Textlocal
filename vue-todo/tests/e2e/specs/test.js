@@ -3,6 +3,6 @@
 describe('My First Test', () => {
   it('Visits the app root url', () => {
     cy.visit('/');
-    cy.contains('h1', 'VUE TODO LIST!');
+    cy.contains('h1', 'Vue Todo List!');
   });
 });

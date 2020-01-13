@@ -56,7 +56,9 @@ export default {
           this.todos = JSON.parse(localStorage.getItem(key));
         } catch (e) {
           localStorage.removeItem(key);
-          console.error(e);
+          if (window.console) {
+            console.error(e);
+          }
         }
       }
     }
@@ -89,7 +91,9 @@ export default {
           parsed.splice(index, 1);
           localStorage.setItem('todos', JSON.stringify(parsed));
         } catch (e) {
-          console.error(e);
+          if (window.console) {
+            console.error(e);
+          }
         }
       } else {
         this.saveTodo();
